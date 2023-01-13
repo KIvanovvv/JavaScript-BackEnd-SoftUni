@@ -1,0 +1,35 @@
+body {
+  background-color: wheat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 200px;
+}
+
+ul {
+  /* background-color: red; */
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  background-color: ccc;
+  padding: 5px 20px;
+  border-radius: 15px;
+  border: none;
+}
+a:hover {
+  background-color: white;
+}
+
+#content {
+  background-color: ccc;
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
