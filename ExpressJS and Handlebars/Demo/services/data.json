@@ -2,7 +2,8 @@
   {
     "id": "asd1231",
     "name": "Rear mirror (Left)",
-    "price": 90
+    "price": 90,
+    "_locals": {}
   },
   {
     "id": "asd1232",
@@ -12,7 +13,8 @@
   {
     "id": "asd1233",
     "name": "Headlights",
-    "price": "220"
+    "price": "220",
+    "_locals": {}
   },
   {
     "id": "asdf5165",
