@@ -1,2 +1,12 @@
 <h1>Catalog Page</h1>
 <h2>Products list</h2>
+
+{{#if products}}
+  <ul id="catalog">
+    {{#each products}}
+    {{>productCard}}
+    {{/each}}
+  </ul>
+{{else}}
+  <h3>The catalog is empty.</h3>
+{{/if}}
