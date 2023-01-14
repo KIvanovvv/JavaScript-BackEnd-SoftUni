@@ -1,0 +1,27 @@
+[
+  {
+    " id": "asd1231",
+    "name": "Rear mirror (Left)",
+    "price": 90
+  },
+  {
+    "id": "asd1232",
+    "name": "Rear mirror (Right)",
+    "price": 110
+  },
+  {
+    "id": "asd1233",
+    "name": "Headlights",
+    "price": "220"
+  },
+  {
+    "id": "asdf5165",
+    "name": "Front bumper",
+    "price": 350
+  },
+  {
+    "id": "asdf7219",
+    "name": "Rear bumper",
+    "price": 220
+  }
+]
