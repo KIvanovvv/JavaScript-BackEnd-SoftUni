@@ -15,14 +15,16 @@ ul {
   font-size: 20px;
 }
 
-a {
+a,
+button {
   text-decoration: none;
   background-color: ccc;
   padding: 5px 20px;
   border-radius: 15px;
   border: none;
 }
-a:hover {
+a:hover,
+button:hover {
   background-color: white;
 }
 
@@ -43,4 +45,10 @@ form {
 #catalog {
   display: flex;
   flex-direction: column;
+}
+
+#delete-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }

@@ -1,0 +1,13 @@
+<h1>Delete page</h1>
+
+<h2>Are you sure you want to delete this product ?</h2>
+
+<div id="delete-action">
+  <p>Name: {{name}}</p>
+  <p>Price: {{price}}</p>
+
+  <form method="post" action="/delete/:{{id}}">
+    <button type="submit">Delete product</button>
+  </form>
+  <a href="/catalog" id="cancel-btn">Cancel</a>
+</div>

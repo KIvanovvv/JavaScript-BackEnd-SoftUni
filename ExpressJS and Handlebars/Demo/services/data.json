@@ -1,6 +1,6 @@
 [
   {
-    " id": "asd1231",
+    "id": "asd1231",
     "name": "Rear mirror (Left)",
     "price": 90
   },
@@ -18,20 +18,5 @@
     "id": "asdf5165",
     "name": "Front bumper",
     "price": 350
-  },
-  {
-    "id": "asdf7219",
-    "name": "Rear bumper",
-    "price": 220
-  },
-  {
-    "id": "asdf2622",
-    "name": "Passenger seat",
-    "price": 60
-  },
-  {
-    "id": "asdf8870",
-    "name": "Seats set",
-    "price": 320
   }
 ]

@@ -16,6 +16,16 @@ async function addProduct(name, price) {
     name,
     price,
   });
+  await persist();
+}
+async function deleteById(id) {
+  const index = data.findIndex((x) => x.id == id);
+  data.splice(index, 1);
+
+  await persist();
+}
+
+function persist() {
   return new Promise((resolve, reject) => {
     fs.writeFile(
       "./services/data.json",
@@ -35,4 +45,5 @@ module.exports = {
   getList,
   getById,
   addProduct,
+  deleteById,
 };
