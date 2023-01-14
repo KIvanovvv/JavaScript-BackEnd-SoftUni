@@ -9,14 +9,26 @@ function getById(id) {
   return data.find((x) => x.id === id);
 }
 
-function addProduct(name, price) {
+async function addProduct(name, price) {
   const id = "asdf" + Math.trunc(Math.random() * 9999);
   data.push({
     id,
     name,
     price,
   });
-  fs.writeFile("./services/data.json", JSON.stringify(data, null, 2), () => {});
+  return new Promise((resolve, reject) => {
+    fs.writeFile(
+      "./services/data.json",
+      JSON.stringify(data, null, 2),
+      (error) => {
+        if (error == null) {
+          resolve();
+        } else {
+          reject(error);
+        }
+      }
+    );
+  });
 }
 
 module.exports = {

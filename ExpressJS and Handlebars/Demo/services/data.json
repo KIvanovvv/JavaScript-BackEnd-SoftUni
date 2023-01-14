@@ -23,5 +23,15 @@
     "id": "asdf7219",
     "name": "Rear bumper",
     "price": 220
+  },
+  {
+    "id": "asdf2622",
+    "name": "Passenger seat",
+    "price": 60
+  },
+  {
+    "id": "asdf8870",
+    "name": "Seats set",
+    "price": 320
   }
 ]
