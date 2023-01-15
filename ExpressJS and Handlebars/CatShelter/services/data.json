@@ -1,7 +1,7 @@
 [
   {
     "id": "asd1",
-    "name": "Venci New Test",
+    "name": "Venci",
     "breed": "Bombay Cat",
     "description": "Dominant and aggressive to other cats. Will probably eat you in your sleep. Very cute tho.",
     "imageUrl": "https://ichef.bbci.co.uk/news/976/cpsprodpb/12A9B/production/_111434467_gettyimages-1143489763.jpg",
@@ -37,10 +37,10 @@
   },
   {
     "id": "asd929",
-    "name": "Foncho 2",
-    "description": "Mnogo qka kotka",
-    "imageUrl": "interesting-facts-about-kiwis.webp",
-    "breed": "Dvorna",
+    "name": "Strange looking cat",
+    "description": "It's a cat....,kind of...",
+    "imageUrl": "https://www.doc.govt.nz/thumbs/hero/contentassets/a450e32f0b824531858d566404c21884/southern-brown-kiwi-tokoeka-stewart-island-photo-credit-alina-thiebes1920.jpg",
+    "breed": "Unknown",
     "upload": ""
   }
 ]
