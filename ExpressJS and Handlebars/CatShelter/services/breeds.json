@@ -1,1 +1,23 @@
-["Bombay Cat","Forest Cat","Shorthair Cat","Domashna"]
+[
+  {
+    "breed": "Bombay Cat"
+  },
+  {
+    "breed": "Forest Cat"
+  },
+  {
+    "breed": "Shorthair Cat"
+  },
+  {
+    "breed": "Domashna"
+  },
+  {
+    "breed": "New Breed"
+  },
+  {
+    "breed": "Test Breed"
+  },
+  {
+    "breed": "Dvorna"
+  }
+]

@@ -10,10 +10,10 @@ router.get("/", (req, res) => {
 router.post("/", async (req, res) => {
   const breed = req.body.breed;
   const allBreeds = getBreeds();
-  allBreeds.push(breed);
+  allBreeds.push({ breed: breed });
   await fs.writeFile(
     "./services/breeds.json",
-    JSON.stringify(allBreeds),
+    JSON.stringify(allBreeds, null, 2),
     () => {}
   );
   console.log(allBreeds);
