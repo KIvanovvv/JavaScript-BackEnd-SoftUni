@@ -16,7 +16,12 @@ router.post("/:id", async (req, res) => {
   const catId = req.params.id;
   const data = getById(catId);
   const cat = data[0];
-  const updatedCat = Object.assign(cat, { name, description, upload, breed });
+  const updatedCat = Object.assign(cat, {
+    name,
+    description,
+    imageUrl: upload,
+    breed,
+  });
   const allCats = getCats();
   const indexOfCurrentCat = allCats.findIndex((x) => x.id === cat.id);
   allCats.splice(indexOfCurrentCat, 1, updatedCat);
