@@ -26,5 +26,26 @@
     "difficulty": "3",
     "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61HpQqVQ37L._SY355_.jpg",
     "description": "Hard and complex shiny Cube"
+  },
+  {
+    "name": "New Cube",
+    "description": "TEst",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61izOzq%2BBAL._SY355_.jpg",
+    "difficulty": "5",
+    "id": "5c39f1851ab3b24f5c03e892"
+  },
+  {
+    "name": "test",
+    "description": "test",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61izOzq%2BBAL._SY355_.jpg",
+    "difficulty": "3",
+    "id": "5c39f1851ab3b24f5c03e706"
+  },
+  {
+    "name": "New test",
+    "description": "test new",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61izOzq%2BBAL._SY355_.jpg",
+    "difficulty": "1",
+    "id": "5c39f1851ab3b24f5c03e272"
   }
 ]
