@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: flex;
   background-color: wheat;
@@ -33,11 +38,12 @@ li:hover {
 }
 .container {
   background-color: rgb(113, 113, 6);
-  padding: 10px 200px;
+  padding: 20px 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 25px;
+  gap: 10px;
   /* justify-content: center; */
 }
 
@@ -52,5 +58,43 @@ li:hover {
   text-align: center;
 }
 .list-article footer {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 }
+.list-article li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: 26px;
+  gap: 5px;
+  border: none;
+}
+
+form input,
+textarea {
+  padding: 10px 0px;
+  font-size: 20px;
+  resize: none;
+}
+
+form button {
+  width: 80px;
+  font-size: 20px;
+  align-self: center;
+}
+.comments_btn {
+  background-color: white;
+  padding: 3px 10px;
+  border-radius: 15px;
+  text-align: center;
+  display: inline-block;
+  justify-self: center;
+}
+/* .author {
+  display: inline-block;
+} */

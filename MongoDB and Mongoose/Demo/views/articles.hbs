@@ -4,7 +4,10 @@
       <li>
         <header> {{title}}</header>
         <main>{{content}}</main>
-        <footer>Author: {{author}}</footer>
+        <footer><a class="comments_btn" href="/comments/{{_id}}">Comments</a><p
+            class="author"
+          >Author:
+            {{author}}</p></footer>
       </li>
     {{/each}}
   </ul>
