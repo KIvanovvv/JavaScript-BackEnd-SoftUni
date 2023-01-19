@@ -5,4 +5,6 @@ const personScheme = new Schema({
   age: Number,
 });
 
-model();
+const Person = model('Person',personScheme);
+
+module.exports = Person
