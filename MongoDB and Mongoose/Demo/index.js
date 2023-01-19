@@ -12,19 +12,17 @@ async function start() {
   });
 
   console.log(`Database connected`);
-  const data = await Person.find({});
-  console.log(data[0].sayHi());
-  console.log(data[0].name);
 
-  // data[0].name = "Bob Smith";
-  // await data[0].save();
-  const person = new Person({
-    firstName: "Emil",
-    lastName: "Romansky",
-    age: 25,
-    nationality: "Romanian",
-  });
-  await person.save();
+  const data = await Person.find({})
+    .where("age")
+    .gt(18)
+    .lt(50)
+    .where("firstName")
+    .equals("Bob")
+    .sort({ age: -1 })
+    .select(`lastName age`);
+
+  console.log(data);
 
   await mongoose.disconnect();
 }
