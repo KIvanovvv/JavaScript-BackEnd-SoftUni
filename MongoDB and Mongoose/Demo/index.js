@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const Person = require("./models/Person.js");
+const Article = require("./models/Article.js");
+const Comment = require("./models/Comment.js");
 
 const connectionString = "mongodb://localhost:27017/testdb";
 start();
@@ -13,16 +14,8 @@ async function start() {
 
   console.log(`Database connected`);
 
-  const data = await Person.find({})
-    .where("age")
-    .gt(18)
-    .lt(50)
-    .where("firstName")
-    .equals("Bob")
-    .sort({ age: -1 })
-    .select(`lastName age`);
-
-  console.log(data);
+  const article = await Article.findOne({}).populate("comments", "content");
+  console.log(article);
 
   await mongoose.disconnect();
 }
