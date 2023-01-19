@@ -13,7 +13,13 @@ async function addArticle(data) {
   });
 }
 
+async function getArticleById(id) {
+  const article = await Article.findById(id).populate("comments").lean();
+  return article;
+}
+
 module.exports = {
   getAllArticles,
   addArticle,
+  getArticleById,
 };

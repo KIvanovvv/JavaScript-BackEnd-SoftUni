@@ -70,16 +70,19 @@ li:hover {
 form {
   display: flex;
   flex-direction: column;
-  font-size: 26px;
+  /* font-size: 26px; */
   gap: 5px;
   border: none;
 }
 
-form input,
-textarea {
+form input {
   padding: 10px 0px;
   font-size: 20px;
+}
+form textarea {
   resize: none;
+  padding: 10px 0px;
+  font-size: 16px;
 }
 
 form button {
@@ -95,6 +98,19 @@ form button {
   display: inline-block;
   justify-self: center;
 }
-/* .author {
-  display: inline-block;
-} */
+
+.article_comments {
+  background-color: #ccc;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.comments {
+  background-color: white;
+  padding: 5px 20px;
+  align-self: start;
+  border-radius: 15px;
+}

@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="article_comments">
+    {{#with article}}
+      <p>{{title}}</p>
+      <p>{{content}}</p>
+    {{/with}}
+  </div>
+  {{#each comments}}
+    <div class="comments">
+      <p>{{author}}: {{content}}</p>
+    </div>
+  {{/each}}
+</div>
