@@ -32,6 +32,4 @@ async function start() {
     useNewUrlParser: true,
   });
   console.log(`Database is online`);
-  const data = await Article.find({});
-  console.log(data);
 }
