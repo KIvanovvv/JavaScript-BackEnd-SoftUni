@@ -3,8 +3,17 @@ const { Schema, model } = require("mongoose");
 const personScheme = new Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  age: { type: Number, required: true, min: [0, `Age cannot be negative`] },
+  age: { type: Number, required: true },
+  nationality: {
+    type: String,
+    required: true,
+    enum: [`Bulgarian`, `Serbian`, `Romanian`],
+  },
 });
+
+personScheme.path("age").validate(function () {
+  return this.age > 0;
+}, `Age can not be a negative number`);
 
 personScheme.methods.sayHi = function () {
   return `My name is ${this.firstName}`;
