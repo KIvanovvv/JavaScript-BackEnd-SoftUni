@@ -13,5 +13,17 @@ async function start() {
 
   console.log(`Database connected`);
   const data = await Person.find({});
-  console.log(data);
+  console.log(data[0].sayHi());
+  console.log(data[0].name);
+
+  data[0].name = "Bob Smith";
+  await data[0].save();
+  // const person = new Person({
+  //   firstName: "Peter",
+  //   lastName: "Johnson",
+  //   age: 29,
+  // });
+  // await person.save();
+
+  await mongoose.disconnect();
 }
