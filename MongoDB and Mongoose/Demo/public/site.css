@@ -46,7 +46,11 @@ li:hover {
   gap: 10px;
   /* justify-content: center; */
 }
-
+@media screen and (max-width: 1540px) {
+  .container {
+    padding: 20px 100px;
+  }
+}
 .list-article {
   display: flex;
   flex-direction: column;
@@ -113,4 +117,16 @@ form button {
   padding: 5px 20px;
   align-self: start;
   border-radius: 15px;
+}
+
+.comment_section input {
+  font-size: 16px;
+}
+
+.comment_section {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 5px;
 }

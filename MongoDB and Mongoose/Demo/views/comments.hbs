@@ -5,6 +5,20 @@
       <p>{{content}}</p>
     {{/with}}
   </div>
+  <div class="comment_section">
+    <p>Leave a comment</p>
+    <form method="post">
+      <input
+        type="text"
+        placeholder="Share your thoughts..."
+        value=""
+        name="content"
+      />
+      <input type="text" placeholder="Your name..." value="" name="author" />
+      <button>Publish</button>
+
+    </form>
+  </div>
   {{#each comments}}
     <div class="comments">
       <p>{{author}}: {{content}}</p>

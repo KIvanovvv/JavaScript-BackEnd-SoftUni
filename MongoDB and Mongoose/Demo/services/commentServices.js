@@ -5,6 +5,15 @@ async function getComments(articleId) {
   return comments;
 }
 
+async function createComment(content, author, articleId) {
+  await Comment.create({
+    content,
+    author,
+    articleId,
+  });
+}
+
 module.exports = {
   getComments,
+  createComment,
 };

@@ -1,5 +1,8 @@
 const { getArticleById } = require("../services/articleServices.js");
-const { getComments } = require("../services/commentServices.js");
+const {
+  getComments,
+  createComment,
+} = require("../services/commentServices.js");
 
 const commentsController = require("express").Router();
 
@@ -13,6 +16,13 @@ commentsController.get("/:id", async (req, res) => {
     article,
     comments,
   });
+});
+
+commentsController.post("/:id", async (req, res) => {
+  const articleId = req.params.id;
+  const { content, author } = req.body;
+  await createComment(content, author, articleId);
+  res.redirect(`/comments/${articleId}`);
 });
 
 module.exports = commentsController;
