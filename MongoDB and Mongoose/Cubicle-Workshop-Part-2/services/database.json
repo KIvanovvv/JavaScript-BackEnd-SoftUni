@@ -47,5 +47,12 @@
     "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61izOzq%2BBAL._SY355_.jpg",
     "difficulty": "1",
     "id": "5c39f1851ab3b24f5c03e272"
+  },
+  {
+    "name": "Test",
+    "description": "dasda",
+    "imageUrl": "asda",
+    "difficulty": "1",
+    "id": "5c39f1851ab3b24f5c03e277"
   }
 ]
