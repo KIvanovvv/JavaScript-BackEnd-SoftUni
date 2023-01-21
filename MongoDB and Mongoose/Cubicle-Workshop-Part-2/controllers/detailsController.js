@@ -1,11 +1,12 @@
-const { getCubeById } = require("../services/cubeServices.js");
-
+const { getCubeByIdAndPop } = require("../services/cubeServices.js");
 
 const router = require("express").Router();
 
-router.get("/:id", async(req, res) => {
+router.get("/:id", async (req, res) => {
   const id = req.params.id;
-  const cube = await getCubeById(id)
+  const cube = await getCubeByIdAndPop(id);
+  console.log(cube);
+
   const accessories = [
     {
       _id: "asd123",

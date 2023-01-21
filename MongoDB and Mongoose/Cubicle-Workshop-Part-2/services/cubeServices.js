@@ -11,13 +11,25 @@ async function getAllCubes() {
   return cubes;
 }
 
-async function getCubeById(id){
+async function getCubeById(id) {
   const cube = await Cube.findById(id).lean();
-  return cube
+  return cube;
+}
+
+async function getCubeInstanceById(id) {
+  const cube = await Cube.findById(id);
+  return cube;
+}
+
+async function getCubeByIdAndPop(id) {
+  const cube = await Cube.findById(id).populate("accessories").lean();
+  return cube;
 }
 
 module.exports = {
   addNewCube,
   getAllCubes,
-  getCubeById
+  getCubeById,
+  getCubeInstanceById,
+  getCubeByIdAndPop,
 };

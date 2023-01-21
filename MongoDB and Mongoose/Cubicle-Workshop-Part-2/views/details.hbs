@@ -5,9 +5,9 @@
     <p><span>Description:</span> {{description}}</p>
     <p><span>Difficulty level:</span> {{difficulty}}</p>
     <a class="btn" href="/">Back</a>
-    <a href="/attach/accessory/{{id}}" class="btn">Attach accessory</a>
+    <a href="/attach/accessory/{{_id}}" class="btn">Attach accessory</a>
   </div>
-{{/with}}
+
 <h2>Accessories</h2>
 <div class="accessories">
 
@@ -15,8 +15,8 @@
     {{#each accessories}}
      {{>"accessoryCard"}}
     {{/each}}
-    {{#else}}
+    {{else}}
       <h3 class="italic">This cube has no accessories yet...</h3>
-    {{/else}}
   {{/if}}
 </div>
+{{/with}}

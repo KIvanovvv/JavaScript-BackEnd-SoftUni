@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
 
 const accessorySchema = new Schema({
   name: { type: String, required: true },
@@ -7,6 +7,6 @@ const accessorySchema = new Schema({
   cubes: { type: [Types.ObjectId], default: [], ref: "Cube" },
 });
 
-const Accessory = model("accessory", accessorySchema);
+const Accessory = model("Accessory", accessorySchema);
 
 module.exports = Accessory;

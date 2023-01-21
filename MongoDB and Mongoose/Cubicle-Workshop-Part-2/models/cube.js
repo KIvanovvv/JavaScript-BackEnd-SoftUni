@@ -8,6 +8,6 @@ const cubeSchema = new Schema({
   accessories: { type: [Types.ObjectId], default: [], ref: "Accessory" },
 });
 
-const Cube = model("cube", cubeSchema);
+const Cube = model("Cube", cubeSchema);
 
 module.exports = Cube;

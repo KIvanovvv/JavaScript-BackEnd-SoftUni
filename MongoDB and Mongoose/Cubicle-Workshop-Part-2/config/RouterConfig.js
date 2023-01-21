@@ -8,6 +8,6 @@ module.exports = (app) => {
   app.use(homeController);
   app.use("/details", detailsController);
   app.use("/create", createController);
-  app.use("/attach", attachController);
+  app.use("/attach/accessory", attachController);
   app.use("/create/accessory", createAccessoryController);
 };
