@@ -14,11 +14,20 @@ const attachController = require("express").Router();
 attachController.get("/:id", async (req, res) => {
   const accessory = await getAccessories();
   const cube = await getCubeById(req.params.id);
+  const currAccessories = cube.accessories.map((id) => id.valueOf());
+  const allAccessories = accessory.map((acc) => acc._id.valueOf());
+  const uniqueAccessoriesId = allAccessories.filter(
+    (a) => currAccessories.indexOf(a) == -1
+  );
+
+  const uAccessories = accessory.filter(
+    (a) => uniqueAccessoriesId.indexOf(a._id.valueOf()) !== -1
+  );
+  console.log(uAccessories);
   res.render("attachAccessory", {
     cube,
-    accessory,
+    uAccessories
   });
-  console.log(req.params.id);
 });
 
 attachController.post("/:id", async (req, res) => {
@@ -27,7 +36,6 @@ attachController.post("/:id", async (req, res) => {
   const accessory = await getAccessoryByName(name);
 
   cube.accessories.push(accessory[0]._id);
-  console.log(cube);
 
   await cube.save();
   res.redirect(`/details/${req.params.id}`);
