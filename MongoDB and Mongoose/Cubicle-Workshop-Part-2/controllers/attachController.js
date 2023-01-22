@@ -1,7 +1,6 @@
 const Cube = require("../models/cube.js");
 const {
   getAccessories,
-  getAccessoryById,
   getAccessoryByName,
 } = require("../services/accessoryServices.js");
 const {
@@ -23,7 +22,7 @@ attachController.get("/:id", async (req, res) => {
   const uAccessories = accessory.filter(
     (a) => uniqueAccessoriesId.indexOf(a._id.valueOf()) !== -1
   );
-  console.log(uAccessories);
+
   res.render("attachAccessory", {
     cube,
     uAccessories

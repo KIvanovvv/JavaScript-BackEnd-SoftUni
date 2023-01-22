@@ -26,10 +26,22 @@ async function getCubeByIdAndPop(id) {
   return cube;
 }
 
+async function getCubeWithParams(search, from, to) {
+  const cubes = await Cube.find({
+    name: { $regex: search || "", $options: "i" },
+  })
+    .where("difficulty")
+    .gte(from || 1)
+    .lte(to || 6)
+    .lean();
+  return cubes;
+}
+
 module.exports = {
   addNewCube,
   getAllCubes,
   getCubeById,
   getCubeInstanceById,
   getCubeByIdAndPop,
+  getCubeWithParams,
 };

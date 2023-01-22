@@ -1,5 +1,7 @@
-const { getAllCubes } = require("../services/cubeServices.js");
-const { getCubes, findCubes } = require("../services/services.js");
+const {
+  getAllCubes,
+  getCubeWithParams,
+} = require("../services/cubeServices.js");
 
 const router = require("express").Router();
 
@@ -12,9 +14,9 @@ router.get("/about", (req, res) => {
   res.render("about");
 });
 
-router.get("/search", (req, res) => {
-  const cubes = findCubes(req.query);
+router.get("/search", async (req, res) => {
   const { search, from, to } = req.query;
+  const cubes = await getCubeWithParams(search, from, to);
   res.render("home", { cubes, search, from, to });
 });
 
