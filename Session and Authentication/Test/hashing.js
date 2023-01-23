@@ -1,7 +1,14 @@
 const bcrypt = require("bcrypt");
 
-const hashedPass = bcrypt.hashSync("12345", 10);
-// console.log(hashedPass);
+async function hash(password) {
+  return bcrypt.hash(password, 10);
+}
 
-const res = bcrypt.compareSync("12345", hashedPass);
-console.log(res);
+async function compare(password, hashedPassword) {
+  return bcrypt.compare(password, hashedPassword);
+}
+
+module.exports = {
+  hash,
+  compare,
+};
