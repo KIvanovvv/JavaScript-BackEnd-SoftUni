@@ -7,15 +7,15 @@ app.use(
   session({
     secret: "my secret word",
     saveUninitialized: true,
-    cookie: { secure: true },
+    resave: false,
+    cookie: { secure: false },
   })
 );
 
 app.get("/", (req, res) => {
-  console.log(req.cookies);
-  res.cookie("userId", "asd123asd");
-  res.cookie("cookieParser", 1);
-  res.end("Cookie set");
+  console.log(req.session);
+  req.session.visited = (req.session.visited || 0) + 1;
+  res.send(`Hello visited counter: ${req.session.visited}`);
 });
 
 app.listen(5000);
