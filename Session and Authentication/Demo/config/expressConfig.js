@@ -7,7 +7,8 @@ const { authController } = require("../controllers/authController.js");
 const commentsController = require("../controllers/commentsController.js");
 const createController = require("../controllers/createController.js");
 const homeController = require("../controllers/homeController.js");
-const auth = require("../middleware/auth.js")
+const auth = require("../middleware/auth.js");
+const updateNav = require("../middleware/updateNav.js");
 
 const handlebars = hbs.create({
   extname: ".hbs",
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/public", express.static("public"));
 app.use(auth(jwtSecret))
+app.use(updateNav())
 
 app.use(homeController);
 app.use("/articles", articleController);

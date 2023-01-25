@@ -12,5 +12,10 @@ module.exports = (jwtSecret) => (req, res, next) => {
       return res.redirect("/auth/login");
     }
   }
+
+  req.signJwt = (data) =>
+    jwt.sign(data, jwtSecret, {
+      expiresIn: "4h",
+    });
   next();
 };
