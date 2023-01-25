@@ -135,3 +135,29 @@ form button {
   color: red;
   font-size: 16px;
 }
+.delete {
+  background-color: red;
+}
+
+.edit_page form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.delete_btn {
+  background-color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+}
+.btn_btn:hover {
+  cursor: pointer;
+  background-color: red;
+}
+.a_btn {
+  padding: 0px 25px;
+}

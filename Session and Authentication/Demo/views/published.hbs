@@ -9,6 +9,10 @@
           <footer>
             <a class="comments_btn" href="/comments/{{_id}}">Comments</a>
             <a class="comments_btn" href="/edit/{{_id}}">Edit</a>
+            <a
+              class="comments_btn delete"
+              href="/edit/delete/{{_id}}"
+            >Delete</a>
           </footer>
         </li>
       {{/each}}

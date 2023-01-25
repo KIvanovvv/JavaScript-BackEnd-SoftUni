@@ -2,7 +2,7 @@ const { register, login } = require("../services/authService.js");
 const authController = require("express").Router();
 
 authController.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", { title: "Login" });
 });
 
 authController.post("/login", async (req, res) => {
@@ -18,7 +18,7 @@ authController.post("/login", async (req, res) => {
 });
 
 authController.get("/register", (req, res) => {
-  res.render("register");
+  res.render("register", { title: "Register" });
 });
 authController.post("/register", async (req, res) => {
   try {

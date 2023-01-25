@@ -11,6 +11,7 @@ const auth = require("../middleware/auth.js");
 const updateNav = require("../middleware/updateNav.js");
 const publishedController = require("../controllers/publishedController.js");
 const editController = require("../controllers/editCotroller.js");
+const hasUserGuard = require("../middleware/hasUserGuard.js");
 
 const handlebars = hbs.create({
   extname: ".hbs",
@@ -29,10 +30,10 @@ app.use(updateNav());
 
 app.use(homeController);
 app.use("/articles", articleController);
-app.use("/create", createController);
-app.use("/comments", commentsController);
+app.use("/create", hasUserGuard(), createController);
+app.use("/comments", hasUserGuard(), commentsController);
 app.use("/auth", authController);
-app.use("/published", publishedController);
-app.use("/edit",editController)
+app.use("/published", hasUserGuard(), publishedController);
+app.use("/edit", hasUserGuard(), editController);
 
 module.exports = app;
