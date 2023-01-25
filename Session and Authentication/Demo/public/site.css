@@ -130,3 +130,8 @@ form button {
   text-align: center;
   gap: 5px;
 }
+
+.error_msg {
+  color: red;
+  font-size: 16px;
+}

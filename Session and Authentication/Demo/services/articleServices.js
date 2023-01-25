@@ -4,8 +4,7 @@ async function getAllArticles() {
   const article = await Article.find({}).lean();
   return article;
 }
-async function addArticle(data) {
-  const { title, content, author } = data;
+async function addArticle(title, content, author) {
   await Article.create({
     title,
     content,

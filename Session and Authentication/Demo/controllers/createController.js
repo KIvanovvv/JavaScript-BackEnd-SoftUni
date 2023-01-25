@@ -7,8 +7,9 @@ createController.get("/", (req, res) => {
 });
 
 createController.post("/", async (req, res) => {
-  console.log(req.body);
-  await addArticle(req.body);
+  const { title, content } = req.body;
+  const author = req.user.username
+  await addArticle(title, content,author);
   res.redirect("/articles");
 });
 

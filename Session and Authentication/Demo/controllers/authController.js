@@ -1,30 +1,41 @@
-const { register } = require("../services/authService.js");
+const { register, login } = require("../services/authService.js");
 const authController = require("express").Router();
 
 authController.get("/login", (req, res) => {
   res.render("login");
 });
 
-authController.post("/login", (req, res) => {
-  const payload = {
-    _id: "asd24434324eada3",
-    username: "Peter",
-  };
-  const token = req.signJwt(payload);
-  res.cookie("jwt", token);
-  res.redirect("/");
+authController.post("/login", async (req, res) => {
+  try {
+    const user = await login(req.body.username, req.body.password);
+    // console.log(user);
+    const token = req.signJwt(user);
+    res.cookie("jwt", token);
+    res.redirect("/");
+  } catch (error) {
+    res.render("login", { error: error.message });
+  }
 });
 
 authController.get("/register", (req, res) => {
   res.render("register");
 });
 authController.post("/register", async (req, res) => {
-  const { username, password, repass } = req.body;
-  if (password !== repass) {
-    console.log(`Passwords dont match`);
-    return;
+  try {
+    const { username, password, repass } = req.body;
+    if (!username || !password) {
+      throw new Error(`All fields are required!`);
+    }
+    if (password !== repass) {
+      throw new Error(`Passwords dont match`);
+    }
+    const newUser = await register(username, password);
+    const token = req.signJwt(newUser);
+    res.cookie("jwt", token);
+    res.redirect("/");
+  } catch (error) {
+    res.render("register", { error: error.message });
   }
-  await register(username, password);
 });
 
 authController.get("/logout", (req, res) => {
