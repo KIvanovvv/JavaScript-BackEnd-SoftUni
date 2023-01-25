@@ -12,6 +12,7 @@ const updateNav = require("../middleware/updateNav.js");
 const publishedController = require("../controllers/publishedController.js");
 const editController = require("../controllers/editCotroller.js");
 const hasUserGuard = require("../middleware/hasUserGuard.js");
+const notFound = require("../controllers/404.js");
 
 const handlebars = hbs.create({
   extname: ".hbs",
@@ -35,5 +36,6 @@ app.use("/comments", hasUserGuard(), commentsController);
 app.use("/auth", authController);
 app.use("/published", hasUserGuard(), publishedController);
 app.use("/edit", hasUserGuard(), editController);
+app.use("/*", notFound);
 
 module.exports = app;
