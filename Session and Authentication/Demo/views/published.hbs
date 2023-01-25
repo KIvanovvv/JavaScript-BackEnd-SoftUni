@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>You'r articles</h2>
+  <ul class="list-article">
+    {{#if articles}}
+      {{#each articles}}
+        <li>
+          <header> {{title}}</header>
+          <main>{{content}}</main>
+          <footer>
+            <a class="comments_btn" href="/comments/{{_id}}">Comments</a>
+            <a class="comments_btn" href="/edit/{{_id}}">Edit</a>
+          </footer>
+        </li>
+      {{/each}}
+    {{else}}
+      <p>You don't have any articles yet </p>
+    {{/if}}
+  </ul>
+</div>
