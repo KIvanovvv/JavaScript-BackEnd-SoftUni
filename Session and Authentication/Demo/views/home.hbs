@@ -1,5 +1,17 @@
 <div class="container">
-  <h1>Home page</h1>
-
-  <p>This is the home page</p>
+  {{#if user}}
+    <h1>Welcome, {{user.username}}!</h1>
+    <div class="home_wrapper">
+      <p>We are glad, to have you back.</p>
+      <p>You can check, if there has been any new artcles or someone might
+        comennted on yours.</p>
+    </div>
+  {{else}}
+    <h1>Hello guest!</h1>
+    <div class="home_wrapper">
+      <p>This is ArticleApp.</p>
+      <p>Here you can have alot of fun with reading, commenting and even posting
+        you'r own articles.</p>
+    </div>
+  {{/if}}
 </div>

@@ -5,11 +5,15 @@
 
 body {
   display: flex;
-  background-color: wheat;
+  background-image: url("https://kenyainvest.co.ke/wp-content/uploads/2022/10/blog-blog.webp");
+  background-repeat: none;
+  background-size: contain;
   flex-direction: column;
   align-items: center;
   padding: 20px 450px;
   gap: 50px;
+  height: 100%;
+  overflow: hidden;
 }
 p {
   font-size: 20px;
@@ -44,7 +48,11 @@ li:hover {
   align-items: center;
   border-radius: 25px;
   gap: 10px;
-  /* justify-content: center; */
+  /* height: 800px; */
+  /* overflow: auto; */
+}
+.articles {
+  height: 800px;
 }
 @media screen and (max-width: 1540px) {
   .container {
@@ -56,6 +64,7 @@ li:hover {
   flex-direction: column;
   padding: 0px 20px;
   gap: 20px;
+  overflow: auto;
 }
 
 .list-article header {
@@ -160,4 +169,13 @@ form button {
 }
 .a_btn {
   padding: 0px 25px;
+}
+
+.home_wrapper {
+  background-color: #ccc;
+  text-align: center;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
