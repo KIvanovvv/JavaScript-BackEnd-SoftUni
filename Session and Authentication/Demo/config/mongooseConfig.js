@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const connectionString = "mongodb://localhost:27017/testdb";
 
 
-async function startMongoose() {
+async function startMongoose(MONGO_URI) {
   mongoose.set("strictQuery", true);
-  mongoose.connect(connectionString, {
+  mongoose.connect(MONGO_URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
   });

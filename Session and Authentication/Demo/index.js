@@ -1,5 +1,8 @@
+require("dotenv").config();
 const startMongoose = require("./config/mongooseConfig.js");
 const app = require("./config/expressConfig.js");
 
-startMongoose();
-app.listen(5000, () => console.log(`Server is listening on port 5000...`));
+const PORT = process.env.PORT || 5000;
+
+startMongoose(process.env.MONGO_URI);
+app.listen(PORT, () => console.log(`Server is listening on port 5000...`));
