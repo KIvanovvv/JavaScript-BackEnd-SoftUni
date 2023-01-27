@@ -17,7 +17,7 @@ editController.post("/:id", isAuth(), async (req, res) => {
   cube.name = req.body.name;
   cube.description = req.body.description;
   cube.imageUrl = req.body.imageUrl;
-  cube.difficulty = req.body.difficulty;
+  cube.difficulty = req.body.difficultyLevel;
   await cube.save();
   res.redirect(`/details/${req.params.id}`);
 });
