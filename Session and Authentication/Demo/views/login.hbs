@@ -1,12 +1,12 @@
 <div class="container">
 
-  <h2>Login</h2>
+  <h1 class="page_header">Login</h1>
   {{#if error}}
     <p class="error_msg">{{error}}</p>
   {{/if}}
   <form method="post">
     <input type="text" name="username" placeholder="Username..." />
     <input type="password" name="password" placeholder="Password..." />
-    <button type="submit">Login</button>
+    <button type="submit" class="btn_action">Enter</button>
   </form>
 </div>

@@ -7,13 +7,15 @@ body {
   display: flex;
   background-image: url("https://kenyainvest.co.ke/wp-content/uploads/2022/10/blog-blog.webp");
   background-repeat: none;
-  background-size: contain;
+  background-size: cover;
   flex-direction: column;
   align-items: center;
   padding: 20px 450px;
   gap: 50px;
   height: 100%;
+  /* width: 100%; */
   overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 p {
   font-size: 20px;
@@ -29,8 +31,15 @@ ul {
 }
 
 ul li {
-  background-color: #ccc;
+  /* background-color: #ccc; */
+  background: linear-gradient(
+    90deg,
+    hsla(37, 21%, 79%, 1) 0%,
+    hsla(34, 12%, 60%, 1) 36%,
+    hsla(18, 14%, 39%, 1) 100%
+  );
   padding: 5px 20px;
+  border-radius: 5px;
 }
 a {
   text-decoration: none;
@@ -40,13 +49,16 @@ a {
 li:hover {
   background-color: lightgray;
 }
+
 .container {
-  background-color: rgb(113, 113, 6);
+  background-image: url("https://img.freepik.com/free-photo/old-dark-wooden-surface_24837-364.jpg?w=2000");
+  background-repeat: none;
+  background-size: cover;
   padding: 20px 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 25px;
+  border-radius: 15px;
   gap: 10px;
   /* height: 800px; */
   /* overflow: auto; */
@@ -56,7 +68,10 @@ li:hover {
 }
 @media screen and (max-width: 1540px) {
   .container {
-    padding: 20px 100px;
+    padding: 20px 60px;
+  }
+  .articles {
+    height: 550px;
   }
 }
 .list-article {
@@ -113,7 +128,13 @@ form button {
 }
 
 .article_comments {
-  background-color: #ccc;
+  /* background-color: #ccc; */
+  background: linear-gradient(
+    90deg,
+    hsla(37, 21%, 79%, 1) 0%,
+    hsla(34, 12%, 60%, 1) 36%,
+    hsla(18, 14%, 39%, 1) 100%
+  );
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
@@ -171,11 +192,34 @@ form button {
   padding: 0px 25px;
 }
 
+.btn_action {
+  font-weight: bold;
+  font-size: 20px;
+  /* padding: 0px 40px; */
+  /* width: 80px; */
+  border-radius: 10px;
+  text-align: center;
+}
+.btn_action:hover {
+  background-color: darkgray;
+  cursor: pointer;
+}
 .home_wrapper {
-  background-color: #ccc;
+  /* background-color: #ccc; */
+  background: linear-gradient(
+    90deg,
+    hsla(37, 21%, 79%, 1) 0%,
+    hsla(34, 12%, 60%, 1) 36%,
+    hsla(18, 14%, 39%, 1) 100%
+  );
   text-align: center;
   padding: 20px 40px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border-radius: 5px;
+}
+
+.page_header {
+  color: white;
 }
