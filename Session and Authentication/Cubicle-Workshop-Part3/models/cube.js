@@ -6,6 +6,7 @@ const cubeSchema = new Schema({
   imageUrl: { type: String, required: true },
   difficulty: { type: Number, min: 1, max: 6 },
   accessories: { type: [Types.ObjectId], default: [], ref: "Accessory" },
+  ownerId: { type: Types.ObjectId, required: true },
 });
 
 const Cube = model("Cube", cubeSchema);

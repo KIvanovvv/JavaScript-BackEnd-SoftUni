@@ -1,6 +1,5 @@
 const { addNewCube } = require("../services/cubeServices.js");
 
-
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
@@ -8,7 +7,15 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  await addNewCube(req.body);
+  const { name, description, imageUrl, difficulty } = req.body;
+
+  await addNewCube({
+    name,
+    description,
+    imageUrl,
+    difficulty,
+    ownerId: req.user._id,
+  });
   console.log(req.body);
   res.redirect("/");
 });

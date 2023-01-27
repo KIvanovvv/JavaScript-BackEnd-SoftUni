@@ -15,7 +15,9 @@ registerController.post("/", async (req, res) => {
     if (password !== repass) {
       throw new Error(`Passwords dont match`);
     }
-    await register(username, password);
+    const user = await register(username, password);
+    const token = req.signJwt(user);
+    res.cookie("jwt", token);
     res.redirect("/");
   } catch (error) {
     res.render("register", { error: error.message });

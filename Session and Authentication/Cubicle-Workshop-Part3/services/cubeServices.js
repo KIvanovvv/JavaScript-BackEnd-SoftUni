@@ -3,6 +3,7 @@ const Cube = require("../models/cube.js");
 async function addNewCube(data) {
   await Cube.create({
     ...data,
+    
   });
 }
 

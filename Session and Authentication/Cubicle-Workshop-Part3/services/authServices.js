@@ -2,10 +2,14 @@ const User = require("../models/user.js");
 const bcrypt = require("bcrypt");
 
 async function register(username, password) {
-  await User.create({
+  const newUser = await User.create({
     username: username,
     hashedPassword: await bcrypt.hash(password, 10),
   });
+  return {
+    username: newUser.username,
+    _id: newUser._id,
+  };
 }
 
 async function login(username, password) {

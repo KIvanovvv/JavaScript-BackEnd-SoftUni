@@ -6,7 +6,16 @@ const {
 const router = require("express").Router();
 
 router.get("/", async (req, res) => {
-  const cubes = await getAllCubes();
+  const data = await getAllCubes();
+  const cubes = data.map((c) => {
+    if (c.ownerId == req.user._id) {
+      c.isOwner = true;
+      return c;
+    }
+    c.isOwner = false;
+    return c;
+  });
+
   res.render("home", { cubes });
 });
 
