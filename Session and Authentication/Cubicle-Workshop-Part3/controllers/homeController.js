@@ -8,6 +8,9 @@ const router = require("express").Router();
 router.get("/", async (req, res) => {
   const data = await getAllCubes();
   const cubes = data.map((c) => {
+    if (!req.user) {
+      req.user = false;
+    }
     if (c.ownerId == req.user._id) {
       c.isOwner = true;
       return c;
