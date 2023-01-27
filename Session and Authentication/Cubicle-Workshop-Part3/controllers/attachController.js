@@ -1,3 +1,4 @@
+const isAuth = require("../middleware/isAuth.js");
 const Cube = require("../models/cube.js");
 const {
   getAccessories,
@@ -10,7 +11,7 @@ const {
 
 const attachController = require("express").Router();
 
-attachController.get("/:id", async (req, res) => {
+attachController.get("/:id", isAuth(), async (req, res) => {
   const accessory = await getAccessories();
   const cube = await getCubeById(req.params.id);
   const currAccessories = cube.accessories.map((id) => id.valueOf());
@@ -25,11 +26,11 @@ attachController.get("/:id", async (req, res) => {
 
   res.render("attachAccessory", {
     cube,
-    uAccessories
+    uAccessories,
   });
 });
 
-attachController.post("/:id", async (req, res) => {
+attachController.post("/:id", isAuth(), async (req, res) => {
   const cube = await getCubeInstanceById(req.params.id);
   const name = req.body.accessory;
   const accessory = await getAccessoryByName(name);

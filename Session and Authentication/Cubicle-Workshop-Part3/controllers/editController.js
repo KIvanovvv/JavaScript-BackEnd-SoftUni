@@ -1,18 +1,18 @@
+const isAuth = require("../middleware/isAuth.js");
 const {
   getCubeById,
   getCubeInstanceById,
-  getCubeWithParams,
 } = require("../services/cubeServices.js");
 
 const editController = require("express").Router();
 
-editController.get("/:id", async (req, res) => {
+editController.get("/:id", isAuth(), async (req, res) => {
   const cube = await getCubeById(req.params.id);
   console.log(cube);
   res.render("edit", { cube });
 });
 
-editController.post("/:id", async (req, res) => {
+editController.post("/:id", isAuth(), async (req, res) => {
   const cube = await getCubeInstanceById(req.params.id);
   cube.name = req.body.name;
   cube.description = req.body.description;
