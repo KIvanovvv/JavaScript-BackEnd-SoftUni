@@ -21,5 +21,5 @@ loginController.post("/", async (req, res) => {
     res.render("login", { error: error.message });
   }
 });
-//TODOO ,make token middleware to check validity and export jwtSign function in it,makae nav middleware
+
 module.exports = loginController;

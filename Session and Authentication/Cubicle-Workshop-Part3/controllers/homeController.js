@@ -20,4 +20,9 @@ router.get("/search", async (req, res) => {
   res.render("home", { cubes, search, from, to });
 });
 
+router.get("/logout", (req, res) => {
+  res.cookie("jwt", "", { maxAge: 0 });
+  res.redirect("/");
+});
+
 module.exports = router;
