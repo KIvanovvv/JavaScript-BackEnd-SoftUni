@@ -3,7 +3,6 @@ const Cube = require("../models/cube.js");
 async function addNewCube(data) {
   await Cube.create({
     ...data,
-    
   });
 }
 
@@ -35,6 +34,8 @@ async function getCubeWithParams(search, from, to) {
     .gte(from || 1)
     .lte(to || 6)
     .lean();
+
+  console.log(cubes);
   return cubes;
 }
 

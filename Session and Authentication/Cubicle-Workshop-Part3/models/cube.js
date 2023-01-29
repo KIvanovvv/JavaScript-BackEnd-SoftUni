@@ -4,7 +4,7 @@ const cubeSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, maxlength: 100, minlength: 10 },
   imageUrl: { type: String, required: true },
-  difficulty: { type: String, required: true },
+  difficulty: { type: Number, required: true },
   accessories: { type: [Types.ObjectId], default: [], ref: "Accessory" },
   ownerId: { type: Types.ObjectId, required: true },
 });
