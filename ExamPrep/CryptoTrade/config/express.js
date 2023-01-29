@@ -7,6 +7,6 @@ app.engine(".hbs", hbs.engine);
 app.set("view engine", ".hbs");
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use("/public", express.static("public"));
+app.use("/static", express.static("static"));
 
 module.exports = app;
