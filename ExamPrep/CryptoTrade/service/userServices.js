@@ -22,6 +22,36 @@ async function register(username, email, password) {
   };
 }
 
+async function login(email, password) {
+  try {
+    const matchingUser = await User.find({
+      email: { $regex: new RegExp("^" + email + "$"), $options: "i" },
+    });
+
+    if (!matchingUser) {
+      throw Error;
+    }
+
+    const isValid = await bcrypt.compare(
+      password,
+      matchingUser[0].hashedPassword
+    );
+
+    if (!isValid) {
+      throw Error;
+    }
+
+    return {
+      username: matchingUser[0].username,
+      email: matchingUser[0].email,
+      _id: matchingUser[0]._id,
+    };
+  } catch (error) {
+    throw new Error(`Invalid username or password`);
+  }
+}
+
 module.exports = {
   register,
+  login,
 };
