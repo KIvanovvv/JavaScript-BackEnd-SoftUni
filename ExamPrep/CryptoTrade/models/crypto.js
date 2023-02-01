@@ -16,4 +16,4 @@ const cryptoSchema = new Schema({
 
 const Crypto = model("Crypto", cryptoSchema);
 
-module.export = Crypto;
+module.exports = Crypto;

@@ -1,7 +1,10 @@
+ {{#with coins}}
+ 
  <div class="coin">
-    <img src="./static/images/bitcoin.png" />
+    <img src="{{imageUrl}}" />
     <div>
-      <h3>$31,166.71</h3>
-      <p>Bitcoin</p>
+      <h3>${{price}}</h3>
+      <p>{{name}}</p>
     </div>
   </div>
+  {{/with}}

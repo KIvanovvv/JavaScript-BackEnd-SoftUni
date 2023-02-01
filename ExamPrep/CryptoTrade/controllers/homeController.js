@@ -5,4 +5,9 @@ homeController.get("/", (req, res) => {
   console.log(req.user);
 });
 
+homeController.get("/logout", (req, res) => {
+  res.cookie("jwt", "", { maxAge: 0 });
+  res.redirect("/");
+});
+
 module.exports = homeController;
