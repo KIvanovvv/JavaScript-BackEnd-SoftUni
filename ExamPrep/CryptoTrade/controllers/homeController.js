@@ -1,7 +1,10 @@
+const { getAllCrypto } = require("../service/cryptoServices.js");
+
 const homeController = require("express").Router();
 
-homeController.get("/", (req, res) => {
-  res.render("home");
+homeController.get("/", async (req, res) => {
+  const coins = await getAllCrypto();
+  res.render("home", { coins });
   console.log(req.user);
 });
 

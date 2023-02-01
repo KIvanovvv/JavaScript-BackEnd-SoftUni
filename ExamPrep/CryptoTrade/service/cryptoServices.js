@@ -9,6 +9,13 @@ async function addCrypto(data, ownerId) {
   console.log(payload);
 }
 
+async function getAllCrypto(){
+  const data = await Crypto.find({}).lean()
+  return data
+
+}
+
 module.exports = {
   addCrypto,
+  getAllCrypto
 };

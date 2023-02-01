@@ -1,10 +1,10 @@
- {{#with coins}}
- 
- <div class="coin">
+{{#each coins}}
+
+  <div class="coin">
     <img src="{{imageUrl}}" />
     <div>
       <h3>${{price}}</h3>
       <p>{{name}}</p>
     </div>
   </div>
-  {{/with}}
+{{/each}}
