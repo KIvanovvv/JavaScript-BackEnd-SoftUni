@@ -15,7 +15,7 @@ detailsController.get("/:id", isOwner(), async (req, res) => {
       isOwner: req.user.isOwner,
       hasBought: req.user.hasBought,
     };
-    console.log(req.user);
+    // console.log(req.user);
     res.render("details", { coin, options });
   }
 });

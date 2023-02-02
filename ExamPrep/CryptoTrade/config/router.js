@@ -9,6 +9,7 @@ const registerController = require("../controllers/registerController.js");
 const searchController = require("../controllers/searchController.js");
 const hasUser = require("../middleware/hasUser.js");
 
+
 module.exports = (app) => {
   app.use(homeController);
   app.use("/catalog", catalogController);
@@ -17,6 +18,6 @@ module.exports = (app) => {
   app.use("/login", hasUser(false), loginController);
   app.use("/register", hasUser(false), registerController);
   app.use("/details", hasUser(true), detailsController);
-  app.use("/edit", hasUser(true), editController);
+  app.use("/edit", hasUser(true),  editController);
   app.use("*", notFoundController);
 };

@@ -3,11 +3,11 @@ const { getCoinOwner } = require("../service/cryptoServices.js");
 module.exports = () => async (req, res, next) => {
   const ids = await getCoinOwner(req.params.id);
   const { coinOwnerId, buyers } = ids;
-  console.log(buyers);
+  // console.log(buyers);
   if (!req.user) {
     next();
   } else if (req.user._id === coinOwnerId) {
-    console.log(`matching`);
+    // console.log(`matching`);
     res.locals.user.isOwner = true;
     next();
   } else {
