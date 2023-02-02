@@ -27,4 +27,10 @@ detailsController.get("/buy/:id", async (req, res) => {
   res.redirect(`/details/${req.params.id}`);
 });
 
+detailsController.get("/delete/:id", async (req, res) => {
+  const coinInstance = await getCryptoInstance(req.params.id);
+  await coinInstance.delete();
+  res.redirect("/catalog");
+});
+
 module.exports = detailsController;
