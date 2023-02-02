@@ -3,6 +3,7 @@ const hbs = require("express-handlebars").create({ extname: ".hbs" });
 const cookieParser = require("cookie-parser");
 const tokenValidation = require("../middleware/tokenValidation.js");
 const updateNav = require("../middleware/updateNav.js");
+// const isOwner = require("../middleware/isOwner.js");
 const app = express();
 
 app.engine(".hbs", hbs.engine);

@@ -8,7 +8,7 @@ createController.get("/", (req, res) => {
 
 createController.post("/", async (req, res) => {
   const data = await addCrypto(req.body, req.user._id);
-  console.log(req.user._id);
+  res.redirect("/catalog");
 });
 
 module.exports = createController;

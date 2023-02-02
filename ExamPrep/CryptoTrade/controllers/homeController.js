@@ -5,7 +5,7 @@ const homeController = require("express").Router();
 homeController.get("/", async (req, res) => {
   const coins = await getAllCrypto();
   res.render("home", { coins });
-  console.log(req.user);
+  // console.log(req.user);
 });
 
 homeController.get("/logout", (req, res) => {
