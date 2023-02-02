@@ -1,3 +1,4 @@
+const { where } = require("../models/crypto.js");
 const Crypto = require("../models/crypto.js");
 
 async function addCrypto(data, ownerId) {
@@ -31,10 +32,21 @@ async function getCryptoInstance(id) {
   return instance;
 }
 
+async function searchCoins(name, paymentMethod) {
+  const coins = await Crypto.find({
+    name: { $regex: name || "", $options: "i" },
+  })
+    .where("paymentMethod")
+    .equals(paymentMethod)
+    .lean();
+  return coins;
+}
+
 module.exports = {
   addCrypto,
   getAllCrypto,
   getCoinById,
   getCoinOwner,
   getCryptoInstance,
+  searchCoins,
 };
