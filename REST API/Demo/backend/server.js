@@ -1,6 +1,6 @@
 const startDb = require("./config/database.js");
 const app = require("./config/express.js");
-const authController = require("./controllers/authCobtroller.js");
+const authController = require("./controllers/authController.js");
 
 app.get("/", (req, res) => {
   res.json([{ message1: "Hello" }, { message2: "World" }]);
