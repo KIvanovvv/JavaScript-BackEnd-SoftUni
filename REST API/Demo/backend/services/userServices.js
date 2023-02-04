@@ -18,16 +18,39 @@ async function register(username, email, password) {
   };
 }
 
+async function login(username, password) {
+  try {
+    const match = await User.findOne({ username: username });
+
+    if (!match) {
+      throw new Error(`Invalid username or password`);
+    }
+    const isUser = await bcrypt.compare(password, match.hashedPassword);
+    if (!isUser) {
+      throw new Error(`Invalid username or password`);
+    }
+    return {
+      _id: match._id,
+      username: match.username,
+      email: match.email,
+      accessToken: createToken(match),
+    };
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+
 function createToken(user) {
   const payload = {
     username: user.username,
     email: user.email,
     _id: user._id,
   };
-  const token = jwt.sign(payload, secretStr);
+  const token = jwt.sign(payload, secretStr, { expiresIn: "1h" });
   return token;
 }
 
 module.exports = {
   register,
+  login,
 };
