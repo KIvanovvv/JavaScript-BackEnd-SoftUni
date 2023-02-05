@@ -1,6 +1,6 @@
 const Furniture = require("../models/Furniture.js");
 
-async function create(data) {
+async function create(data, ownerId) {
   const { make, model, year, description, price, img, material } = data;
   const item = await Furniture.create({
     make: make,
@@ -10,17 +10,25 @@ async function create(data) {
     price: price,
     imageUrl: img,
     material: material,
+    _ownerId: ownerId,
   });
   console.log(item);
   return item;
 }
 
-async function getAllItems(){
-  const items = await Furniture.find({})
-  return items
+async function getAllItems() {
+  const items = await Furniture.find({});
+  return items;
 }
+
+async function getItemById(id) {
+  const item = await Furniture.findById(id);
+  return item;
+}
+
 
 module.exports = {
   create,
-  getAllItems
+  getAllItems,
+  getItemById,
 };
