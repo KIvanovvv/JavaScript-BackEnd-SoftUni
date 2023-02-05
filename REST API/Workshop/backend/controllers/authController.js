@@ -21,5 +21,8 @@ authController.post("/login", async (req, res) => {
     console.log(error.message);
   }
 });
+authController.get("/logout", async (req, res) => {
+  res.status(204).end();
+});
 
 module.exports = authController;
