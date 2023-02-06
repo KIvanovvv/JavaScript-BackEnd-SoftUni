@@ -6,7 +6,7 @@ authController.post("/register", async (req, res) => {
   try {
     const { email, password } = req.body;
     const token = await register(email, password);
-    req.user = token;
+
     res.json(token);
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -16,7 +16,7 @@ authController.post("/register", async (req, res) => {
 authController.post("/login", async (req, res) => {
   try {
     const token = await login(req.body.email, req.body.password);
-    req.user = token;
+
     console.log(req.user);
     res.json(token);
   } catch (error) {

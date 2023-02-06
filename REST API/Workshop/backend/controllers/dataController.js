@@ -2,13 +2,19 @@ const {
   create,
   getAllItems,
   getItemById,
+  getItemsByOwnerId,
 } = require("../services/furnitureServices.js");
 
 const dataController = require("express").Router();
 
 dataController.get("/catalog", async (req, res) => {
-  const items = await getAllItems();
-
+  let items = [];
+  if (req.query.where) {
+    const ownerId = JSON.parse(req.query.where.split("=")[1]);
+    items = await getItemsByOwnerId(ownerId);
+  } else {
+    items = await getAllItems();
+  }
   res.json(items);
 });
 
@@ -37,6 +43,11 @@ dataController.put("/catalog/:id", async (req, res) => {
 
   await item.save();
   res.json(item);
+});
+
+dataController.delete("/catalog/:id", async (req, res) => {
+  const item = await getItemById(req.params.id);
+  await item.delete();
 });
 
 module.exports = dataController;

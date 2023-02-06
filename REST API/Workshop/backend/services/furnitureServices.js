@@ -26,9 +26,14 @@ async function getItemById(id) {
   return item;
 }
 
+async function getItemsByOwnerId(ownerId) {
+  const items = await Furniture.find({ _ownerId: ownerId });
+  return items;
+}
 
 module.exports = {
   create,
   getAllItems,
   getItemById,
+  getItemsByOwnerId,
 };
