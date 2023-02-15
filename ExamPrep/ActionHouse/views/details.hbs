@@ -1,0 +1,82 @@
+<!-- In case of error, display the following div--><!--
+
+            <div class="error-box">
+                <p>Show each error in a separate paragraph</p>
+            </div>
+
+            -->
+
+<!-- Details Page -->
+<section id="catalog-section">
+{{#if error}}
+    <div class="error-box">
+      <p>{{error}}</p>
+    </div>
+  {{/if}}
+  {{#with action}}
+  <h1 class="item">
+    {{title}}
+    {{#if isOwner}}
+    <a class="action" href="/edit/{{_id}}">Edit</a>
+  <a class="action" href="/details/delete/{{_id}}">Delete</a>
+  {{/if}}
+  </h1>
+  
+  <div class="item padded">
+
+    <div class="layout right large">
+
+      <div class="col">
+        <img src="/{{imageUrl}}" class="img-large" />
+      </div>
+
+      <div class="content pad-med">
+
+        <p>In category: <strong>{{category}}</strong></p>
+        <p>{{description}}</p>
+
+        <div class="align-center">
+          <div>
+            Current price: $<strong>{{price}}</strong>
+          </div>
+           {{#if isOwner}}
+           <div>
+            {{#if hasBid}}       
+    Bid by <strong>{{bidderName}}</strong>
+           
+          
+           <a class="action pad-med cta" href="#">Close Auction</a>
+       
+            {{else}}
+          
+                 No bids
+                {{/if}}
+            </div>
+{{/if}}
+          <!-- If current user can place a bid -->
+          {{#if canBid}}
+          <form class="vertical" method="post" >
+            <label><span>Bid amount</span><input
+                type="number"
+                name="bid"
+              /></label>
+            <input class="action" type="submit" value="Place bid" />
+          </form>
+          {{/if}}
+
+          {{#if isWinning}}
+          <div>
+            You are currently the
+            <strong>highest bidder</strong>
+            for this auction
+          </div>
+          {{/if}}
+        </div>
+{{/with}}
+      </div>
+    </div>
+
+    <footer>Listed by Peter Jackson</footer>
+  </div>
+
+</section>
